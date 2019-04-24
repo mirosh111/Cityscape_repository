@@ -13,6 +13,7 @@ from tqdm import tqdm
 from ptsemseg.models import get_model
 from ptsemseg.loss import get_loss_function
 from ptsemseg.utils import get_logger
+from ptsemseg.loader import cityscapes_loader
 from ptsemseg.metrics import runningScore, averageMeter
 from ptsemseg.augmentations import get_composed_augmentations
 from ptsemseg.schedulers import get_scheduler

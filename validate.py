@@ -8,6 +8,7 @@ from torch.utils import data
 
 
 from ptsemseg.models import get_model
+from ptsemseg.loader import cityscapes_loader
 from ptsemseg.metrics import runningScore
 from ptsemseg.utils import convert_state_dict
 

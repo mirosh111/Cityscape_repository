@@ -12,7 +12,6 @@ from tqdm import tqdm
 
 from ptsemseg.models import get_model
 from ptsemseg.loss import get_loss_function
-from ptsemseg.loader import get_loader
 from ptsemseg.utils import get_logger
 from ptsemseg.metrics import runningScore, averageMeter
 from ptsemseg.augmentations import get_composed_augmentations

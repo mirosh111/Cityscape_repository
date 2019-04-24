@@ -1,9 +1,7 @@
 
-## Semantic Segmentation Algorithms Implemented in PyTorch
+## City scape 2D images segmentation in PyTorch
 
-This repository aims at mirroring popular semantic segmentation architectures in PyTorch. 
-
-
+ 
 
 ### Requirements
 

@@ -34,7 +34,6 @@ model:
 
 # Data Configuration
 data:
-    dataset: <name> [options: 'pascal, camvid, ade20k, mit_sceneparsing_benchmark, cityscapes, nyuv2, sunrgbd, vistas'] 
     train_split: <split_to_train_on>
     val_split: <spit_to_validate_on>
     img_rows: 512
@@ -112,11 +111,10 @@ usage: validate.py [-h] [--config [CONFIG]] [--model_path [MODEL_PATH]]
 **To test the model w.r.t. a dataset on custom images(s):**
 
 ```
-python test.py [-h] [--model_path [MODEL_PATH]] [--dataset [DATASET]]
+python test.py [-h] [--model_path [MODEL_PATH]]
                [--dcrf [DCRF]] [--img_path [IMG_PATH]] [--out_path [OUT_PATH]]
  
   --model_path          Path to the saved model
-  --dataset             Dataset to use ['pascal, camvid, ade20k etc']
   --dcrf                Enable DenseCRF based post-processing
   --img_path            Path of the input image
   --out_path            Path of the output segmap

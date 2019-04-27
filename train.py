@@ -194,7 +194,7 @@ def train(cfg, writer, logger):
                     }
                     save_path = os.path.join(
                         writer.file_writer.get_logdir(),
-                        "{}_{}_best_model.pkl".format(cfg["model"]["arch"], cfg["data"]["dataset"]),
+                        "{}_best_model.pkl".format(cfg["model"]["arch"]),
                     )
                     torch.save(state, save_path)
 
@@ -209,7 +209,7 @@ if __name__ == "__main__":
         "--config",
         nargs="?",
         type=str,
-        default="configs/fcn8s_pascal.yml",
+        default="configs/frrnB_cityscapes.yml",
         help="Configuration file to use",
     )
 
@@ -226,6 +226,6 @@ if __name__ == "__main__":
     shutil.copy(args.config, logdir)
 
     logger = get_logger(logdir)
-    logger.info("Let the games begin")
+    logger.info("Let the hunger games begin")
 
     train(cfg, writer, logger)

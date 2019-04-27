@@ -29,7 +29,7 @@ def test(args):
     print("Read Input Image from : {}".format(args.img_path))
     img = misc.imread(args.img_path)
 
-    data_loader = cityscapes_loader()
+    data_loader = cityscapesLoader()
     loader = data_loader(root=None, is_transform=True, img_norm=args.img_norm, test_mode=True)
     n_classes = loader.n_classes
 
@@ -55,7 +55,7 @@ def test(args):
 
     # Setup Model
     model_dict = {"arch": model_name}
-    model = get_model(model_dict, n_classes, version=args.dataset)
+    model = get_model(model_dict, n_classes, version="cityscapes")
     state = convert_state_dict(torch.load(args.model_path)["model_state"])
     model.load_state_dict(state)
     model.eval()
@@ -107,13 +107,13 @@ if __name__ == "__main__":
         default="fcn8s_pascal_1_26.pkl",
         help="Path to the saved model",
     )
-    parser.add_argument(
-        "--dataset",
-        nargs="?",
-        type=str,
-        default="pascal",
-        help="Dataset to use ['pascal, camvid, ade20k etc']",
-    )
+    #parser.add_argument(
+     #   "--dataset",
+     #   nargs="?",
+     #   type=str,
+     #   default="pascal",
+     #   help="Dataset to use ['pascal, camvid, ade20k etc']",
+    #)
 
     parser.add_argument(
         "--img_norm",

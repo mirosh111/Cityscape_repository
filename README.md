@@ -19,7 +19,6 @@
 
 * [Cityscapes](https://www.cityscapes-dataset.com/)
 
-
 ### Usage
 
 **Setup config file**

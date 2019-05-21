@@ -20,7 +20,6 @@ def validate(cfg, args):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Setup Dataloader
-    #data_loader = get_loader(cfg["data"]["dataset"])
     data_loader = cityscapesLoader()
     data_path = cfg["data"]["path"]
 

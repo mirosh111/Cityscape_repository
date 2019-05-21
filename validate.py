@@ -43,6 +43,7 @@ def validate(cfg, args):
     model.load_state_dict(state)
     model.eval()
     model.to(device)
+    model = torch.nn.DataParallel(model, device_ids=range(torch.cuda.device_count()))
 
     for i, (images, labels) in enumerate(valloader):
         start_time = timeit.default_timer()

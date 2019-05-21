@@ -1,21 +1,25 @@
 model:
-    arch: frrnB
+    arch: frrnA
 data:
     train_split: train
     val_split: val
     img_rows: 512
     img_cols: 1024
-    path: /private/home/meetshah/misc_code/ps/data/VOCdevkit/VOC2012/
+    path: /home/abrylov/data/
 training:
-    train_iters: 85000
-    batch_size: 2
-    val_interval: 500
-    print_interval: 25
+    n_workers: 16
+    train_iters: 45000
+    batch_size: 3
+    val_interval: 10000
+    print_interval: 5000
+    loss:
+        name: bootstrapped_cross_entropy
+        K: 32768
     optimizer:
-        lr: 1.0e-4
-    l_rate: 1.0e-4
-    l_schedule:
-    momentum: 0.99
-    weight_decay: 0.0005
+        name: adam
+        lr: 1.0e-3
+        weight_decay: 0.0005
+    lr_schedule:
+        name: constant_lr
     resume: frrnB_cityscapes_best_model.pkl
     visdom: False

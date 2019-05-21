@@ -38,7 +38,6 @@ def train(cfg, writer, logger):
     data_aug = get_composed_augmentations(augmentations)
 
     # Setup Dataloader
-    #data_loader = get_loader(cfg["data"]["dataset"])
     data_loader = cityscapesLoader()
 
     data_path = cfg["data"]["path"]
